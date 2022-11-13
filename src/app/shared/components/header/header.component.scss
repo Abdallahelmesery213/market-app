@@ -1,0 +1,19 @@
+nav{
+  background-image: linear-gradient(to right, #892424 , #701313);
+  color: #fff;
+  a{
+    color: #fff;
+  }
+  ul{
+    // width: 25%;
+    justify-content: space-between;
+    align-items: center;
+    top: 50%;
+    transform: translateY(15%);
+    li{
+      margin-left: 35px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
