@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllProductsComponent } from './components/all-products/all-products.component';
@@ -17,7 +18,8 @@ import { MatSelectModule} from "@angular/material/select";
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

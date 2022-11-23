@@ -8,6 +8,7 @@ import { Component, OnInit} from '@angular/core';
 })
 export class AllProductsComponent implements OnInit {
   products:any[] = [];
+  loading: boolean = false;
   constructor(private service: ProductsService) { }
 
   ngOnInit(): void {
@@ -15,11 +16,15 @@ export class AllProductsComponent implements OnInit {
   }
 
   getProducts(){
+    this.loading = true;
     this.service.getAllProducts().subscribe((res:any) => {
       this.products = res;
+      this.loading = false;
       console.log(this.products);
-    }
-    )
+    }, error => {
+      this.loading = false;
+      console.log(error);
+    })
   }
 
 }

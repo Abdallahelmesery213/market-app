@@ -6,7 +6,7 @@
   <option value="3">Three</option>
 </select>
 
-<div class="row mt-4">
+<div class="row mt-4" *ngIf="!loading">
   <div class="col-md-3 col-sm-6 col-12 mb-4" *ngFor="let product of products">
     <mat-card >
       <img mat-card-image src="{{product.image}}" alt="card">
@@ -22,6 +22,9 @@
       </mat-card-actions>
     </mat-card>
   </div>
-  
+
+</div>
+<div class="load-cont text-center" *ngIf="loading">
+  <app-loading-page></app-loading-page>
 </div>
 
