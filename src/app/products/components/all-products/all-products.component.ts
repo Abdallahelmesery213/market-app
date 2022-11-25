@@ -8,11 +8,13 @@ import { Component, OnInit} from '@angular/core';
 })
 export class AllProductsComponent implements OnInit {
   products:any[] = [];
+  categories:any[] = [];
   loading: boolean = false;
   constructor(private service: ProductsService) { }
 
   ngOnInit(): void {
     this.getProducts();
+    this.getCategories();
   }
 
   getProducts(){
@@ -23,7 +25,37 @@ export class AllProductsComponent implements OnInit {
       console.log(this.products);
     }, error => {
       this.loading = false;
-      console.log(error);
+      console.log("products error =>  " + error.message);
+    })
+  }
+
+  getCategories(){
+    this.loading = true;
+    this.service.getAllCategories().subscribe((res:any)=>{
+      this.categories = res;
+      console.log(this.categories);
+      this.loading = false;
+    }, err =>{
+      this.loading = false;
+      console.log(err);
+    })
+  }
+
+  filterCategory(event:any){
+    let value = event.target.value;
+    console.log(value);
+    if(value == "all"){
+      this.getProducts();
+    }else {
+      this.getProductsCategory(value);
+    }
+  }
+
+  getProductsCategory(keyWord:string){
+    this.loading = true;
+    this.service.getFilterCategory(keyWord).subscribe((res:any)=>{
+      this.products = res;
+      this.loading = false;
     })
   }
 
