@@ -1,9 +1,9 @@
 mat-card{
-  border: 3px solid #f5f5f5;
+  border: 2px solid #f5f5f5;
   display: flex;
   // justify-content: space-between;
   flex-direction: column;
-  min-height: 650px;
+  min-height: 395px;
 }
 // mat-card:hover{
 //   transform: scale(1.1);
@@ -11,19 +11,32 @@ mat-card{
 // }
 mat-card img {
   margin-top: 0;
-  max-height: 250px;
+  max-height: 140px;
   padding: 5px;
+}
+mat-card-header{
+  height: 40px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #f5f5f5;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 mat-content{
   display: contents;
 }
-mat-content p {
-  font-size: 13px;
-  color: #5c5c5c;
+mat-card-content p {
+  // font-size: 13px;
+  // color: #5c5c5c;
+  height: 80px;
+  overflow: hidden;
 }
 mat-card-actions{
   bottom: 4%;
   position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .load-cont{
