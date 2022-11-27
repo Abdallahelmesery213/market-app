@@ -15,7 +15,7 @@
         <p> {{product.description}} </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" >Add To Card</button>
+        <button mat-raised-button color="primary" (click)="addCard({product})" >Add To Card</button>
         <button mat-raised-button color="accent" >{{product.price}} LE</button>
       </mat-card-actions>
     </mat-card>

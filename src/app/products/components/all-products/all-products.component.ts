@@ -9,6 +9,7 @@ import { Component, OnInit} from '@angular/core';
 export class AllProductsComponent implements OnInit {
   products:any[] = [];
   categories:any[] = [];
+  myProductStorage:any[] = [];
   loading: boolean = false;
   constructor(private service: ProductsService) { }
 
@@ -57,6 +58,24 @@ export class AllProductsComponent implements OnInit {
       this.products = res;
       this.loading = false;
     })
+  }
+
+  // store the cards in localStorage by add card button
+  addCard(data: any){
+    console.log(data.product);
+    if('myProduct' in localStorage){
+      this.myProductStorage = JSON.parse(localStorage.getItem('myProduct')!);
+      let exist = this.myProductStorage.find(itm => itm.id === data.product.id);
+      if (exist){
+        alert("this product already exist");
+      } else {
+        this.myProductStorage.push(data.product);
+        localStorage.setItem('myProduct', JSON.stringify(this.myProductStorage));
+      }
+    } else {
+      this.myProductStorage.push(data.product);
+      localStorage.setItem('myProduct', JSON.stringify(this.myProductStorage));
+    }
   }
 
 }
