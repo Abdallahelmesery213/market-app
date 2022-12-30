@@ -11,11 +11,13 @@ export class AllProductsComponent implements OnInit {
   categories:any[] = [];
   myProductStorage:any[] = [];
   loading: boolean = false;
+  amount: number = 0;
   constructor(private service: ProductsService) { }
 
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();
+    console.log(this.amount)
   }
 
   getProducts(){
@@ -52,6 +54,7 @@ export class AllProductsComponent implements OnInit {
     }
   }
 
+
   getProductsCategory(keyWord:string){
     this.loading = true;
     this.service.getFilterCategory(keyWord).subscribe((res:any)=>{
@@ -60,7 +63,7 @@ export class AllProductsComponent implements OnInit {
     })
   }
 
-  // store the cards in localStorage by add card button
+  // store the carts in localStorage by add card button
   addCard(data: any){
     console.log(data.product);
     if('myProduct' in localStorage){

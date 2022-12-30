@@ -1,24 +1,13 @@
-
-<select class="form-select w-25 mt-5" aria-label="select" (change)="filterCategory($event)">
-  <option value="all" selected> All </option>
-  <option value="{{category}}" *ngFor="let category of categories">{{category}}</option>
-</select>
-
+<!-- select shared -->
+<app-select
+  [title]="'Categories'"
+  [data]="categories"
+  (selectedValue)="filterCategory($event)"
+  >
+</app-select>
 <div class="row mt-4" *ngIf="!loading">
   <div class="col-md-3 col-sm-6 col-12 mb-4" *ngFor="let product of products">
-    <mat-card >
-      <img mat-card-image src="{{product.image}}" alt="card">
-      <mat-card-header>
-        <mat-card-title>{{product.title}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p> {{product.description}} </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="addCard({product})" >Add To Card</button>
-        <button mat-raised-button color="accent" >{{product.price}} LE</button>
-      </mat-card-actions>
-    </mat-card>
+    <app-product [productData]="product"></app-product>
   </div>
 
 </div>

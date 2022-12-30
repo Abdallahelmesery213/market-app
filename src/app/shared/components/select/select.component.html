@@ -1,0 +1,5 @@
+<label for="selectId" class="form-label mt-5">{{title}} :</label>
+<select id="selectId" class="form-select w-25" aria-label="select" (change)="selectChange($event)">
+  <option value="all" selected> All </option>
+  <option value="{{category}}" *ngFor="let category of data">{{category}}</option>
+</select>

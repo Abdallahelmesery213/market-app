@@ -1,0 +1,17 @@
+<mat-card >
+  <img mat-card-image src="{{productData.image}}" alt="card">
+  <mat-card-header>
+    <mat-card-title>{{productData.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p> {{productData.description}} </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="!btnToggle" class="btn btn-primary" (click)="btnToggle= true" >Add To Card</button>
+    <div class="d-flex w-50" *ngIf="btnToggle">
+      <input type="number" class="form-control" >
+      <button class="btn btn-danger" (click)="addCard()">Add</button>
+    </div>
+    <button mat-raised-button class="btn btn-secondary" >{{productData.price}} LE</button>
+  </mat-card-actions>
+</mat-card>
