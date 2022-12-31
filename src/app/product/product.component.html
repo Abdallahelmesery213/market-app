@@ -9,7 +9,7 @@
   <mat-card-actions>
     <button *ngIf="!btnToggle" class="btn btn-primary" (click)="btnToggle= true" >Add To Card</button>
     <div class="d-flex w-50" *ngIf="btnToggle">
-      <input type="number" class="form-control" >
+      <input type="number" class="form-control" [(ngModel)]="amount">
       <button class="btn btn-danger" (click)="addCard()">Add</button>
     </div>
     <button mat-raised-button class="btn btn-secondary" >{{productData.price}} LE</button>

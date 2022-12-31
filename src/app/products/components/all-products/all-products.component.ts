@@ -64,20 +64,21 @@ export class AllProductsComponent implements OnInit {
   }
 
   // store the carts in localStorage by add card button
-  addCard(data: any){
-    console.log(data.product);
-    if('myProduct' in localStorage){
-      this.myProductStorage = JSON.parse(localStorage.getItem('myProduct')!);
-      let exist = this.myProductStorage.find(itm => itm.id === data.product.id);
-      if (exist){
-        alert("this product already exist");
-      } else {
-        this.myProductStorage.push(data.product);
-        localStorage.setItem('myProduct', JSON.stringify(this.myProductStorage));
+  addToCart(event: any){
+    if('cart' in localStorage){
+      console.log(event)
+      this.myProductStorage = JSON.parse(localStorage.getItem('cart')!);
+      let exist = this.myProductStorage.find(item => item.item.id == event.item.id);
+      if(exist){
+        alert("Item already exist in your Cart");
+      }else{
+        this.myProductStorage.push(event);
+        localStorage.setItem('cart', JSON.stringify(this.myProductStorage));
       }
-    } else {
-      this.myProductStorage.push(data.product);
-      localStorage.setItem('myProduct', JSON.stringify(this.myProductStorage));
+     }
+    else {
+      this.myProductStorage.push(event);
+      localStorage.setItem('cart', JSON.stringify(this.myProductStorage));
     }
   }
 

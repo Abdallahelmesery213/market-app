@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -7,15 +7,17 @@ import { Component, Input, OnInit} from '@angular/core';
 })
 export class ProductComponent implements OnInit {
   @Input() productData: any = {};
+  @Output() item = new EventEmitter()
   btnToggle: boolean = false;
+  amount: number = 0;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   addCard(){
-
+    this.item.emit({item:this.productData, quantity: this.amount});
+    this.btnToggle = !this.btnToggle; // hidden add button
   }
 
 }
