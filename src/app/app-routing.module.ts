@@ -2,10 +2,12 @@ import { CartComponent } from './carts/components/cart/cart.component';
 import { AllProductsComponent } from './products/components/all-products/all-products.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductsDetailsComponent } from './products-details/products-details.component';
 
 const routes: Routes = [
   {path: 'products', component: AllProductsComponent},
   {path: 'carts', component: CartComponent},
+  {path: 'details/:id', component: ProductsDetailsComponent},
   {path: '**', redirectTo: "products", pathMatch: 'full'}
 ];
 

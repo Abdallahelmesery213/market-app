@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsModule } from './products/products.module';
+import { ProductsDetailsComponent } from './products-details/products-details.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsDetailsComponent
   ],
   imports: [
     BrowserModule,

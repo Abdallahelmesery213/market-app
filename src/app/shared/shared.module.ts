@@ -23,7 +23,7 @@ import { SelectComponent } from './components/select/select.component';
     HttpClientModule,
     FormsModule,
   ],
-  exports: [HeaderComponent, LoadingPageComponent, FormsModule, SelectComponent, ProductComponent],
+  exports: [HeaderComponent, LoadingPageComponent,RouterModule, FormsModule, SelectComponent, ProductComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class SharedModule { }
