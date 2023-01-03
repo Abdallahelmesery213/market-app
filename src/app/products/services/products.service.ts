@@ -18,4 +18,7 @@ export class ProductsService {
   getFilterCategory(keyWord:string){
     return this.http.get(environment.baseApi +'products/category/'+keyWord)
   }
+  getProdDetailsID(id:any){
+    return this.http.get(environment.baseApi +'products/'+id)
+  }
 }

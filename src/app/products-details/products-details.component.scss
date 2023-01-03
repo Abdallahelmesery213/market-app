@@ -1,0 +1,21 @@
+.details{
+  width: 90%;
+  margin: 100px auto;
+  height: 500px;
+  img{
+    width: 100%;
+    min-height: 500px;
+    max-height: 500px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    li{
+      font-size: 20px;
+      margin: 20px 0;
+      line-height: 25px;
+    }
+  }
+}
