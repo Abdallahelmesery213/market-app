@@ -9,7 +9,7 @@ export class ProductComponent implements OnInit {
   @Input() productData: any = {};
   @Output() item = new EventEmitter()
   btnToggle: boolean = false;
-  amount: number = 0;
+  amount: number = 1;
 
   constructor() { }
 

@@ -1,3 +1,5 @@
+import { CartComponent } from './carts/components/cart/cart.component';
+import { CartsModule } from './carts/carts.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,14 +13,15 @@ import { ProductsDetailsComponent } from './products-details/products-details.co
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsDetailsComponent
+    ProductsDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-
+    CartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
