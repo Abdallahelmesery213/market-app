@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +8,8 @@ import { CommonModule } from '@angular/common';
   declarations: [
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

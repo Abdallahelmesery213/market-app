@@ -3,10 +3,10 @@
   <div class="headCart">
     <div class="row">
       <div class="col-md-6">
-        <p>You Have <strong> 3 </strong> Item In Your Cart</p>
+        <p>You Have <strong> {{myProductStorage.length}} </strong> Item In Your Cart</p>
       </div>
       <div class="col-md-6 text-md-end">
-        <span type="button" class="btn btn-outline-danger">Clear Shopping Cart</span>
+        <span type="button" class="btn btn-outline-danger" (click)="clearCart()">Clear Shopping Cart</span>
       </div>
     </div>
   </div>
@@ -22,19 +22,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of myProductStorage">
+      <tr *ngFor="let item of myProductStorage; let index=index">
         <td><img src="{{item.item.image}}" alt="{{item.item.title}}"></td>
         <td>{{item.item.title}}</td>
         <td>{{item.item.price}} L.E</td>
         <td>
           <div class="quantity">
-            <button class="btn btn-dark"> - </button>
-            <input class="form-control" type="number" min="1" [(ngModel)]="item.quantity">
-            <button class="btn btn-dark"> + </button>
+            <button class="btn btn-dark" (click)="minsAmount(index)"> - </button>
+            <input class="form-control" type="number" min="1" (change)="detactChange()" [(ngModel)]="item.quantity">
+            <button class="btn btn-dark" (click)="addAmount(index)"> + </button>
           </div>
         </td>
         <td>{{item.item.price * item.quantity}} L.E</td>
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td><button class="btn btn-danger" (click)="deleteItem(index)">Delete</button></td>
       </tr>
     </tbody>
     <tfoot>
@@ -43,10 +43,10 @@
         <th></th>
         <th></th>
         <th></th>
-        <th>Total: 1500</th>
-        <th><button class="btn btn-success">Order Now</button></th>
+        <th>Total: {{total}} L.E</th>
+        <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
       </tr>
     </tfoot>
   </table>
 </div>
-<div class="alert alert-success" role="alert"> <strong> well done! </strong> Your Order Is Successfully Send</div>
+<div class="alert alert-success" role="alert" *ngIf="success"> <strong> well done! </strong> Your Order Is Successfully Send</div>
