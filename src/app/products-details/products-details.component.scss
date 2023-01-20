@@ -16,6 +16,14 @@
       font-size: 20px;
       margin: 10px 0;
       line-height: 25px;
+      strong{
+        color: brown;
+      }
     }
+  }
+}
+@media only screen and (max-width: 600px) {
+  img{
+    margin-bottom: 20px;
   }
 }

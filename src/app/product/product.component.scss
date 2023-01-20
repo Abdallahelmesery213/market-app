@@ -42,3 +42,12 @@ mat-card mat-card-actions{
   width: 100%;
   justify-content: space-evenly;
 }
+@media only screen and (max-width: 600px) {
+  mat-card{
+    min-height: 350px;
+  }
+  mat-card-content p {
+    text-align: center;
+    font-size: 15px;
+  }
+}

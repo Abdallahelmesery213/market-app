@@ -2,7 +2,16 @@
   border: 1px solid rgb(245, 242, 242);
   padding: 0 20px;
   border-radius: 5px;
+  h1{
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: 500;
+    color: #c61d21;
+  }
   .table{
+    thead tr th{
+      text-align: center;
+    }
     .quantity{
       display: flex;
       justify-content: space-between;
@@ -34,9 +43,12 @@
     // display: flex;
     // justify-content: space-between;
     // align-items: center;
-    p strong{
-      color: #c61d21;
-      font-size: 15px;
+    p{
+      font-size: 16px;
+      strong{
+        color: #c61d21;
+        font-size: 15px;
+      }
     }
     span{
       font-size: 16px;
@@ -56,5 +68,16 @@
   }
   table .quantity input{
     margin: 0 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .headCart, h1{
+    text-align: center;
+  }
+  .headCart span{
+    margin: 20px 0;
+    display: inline-flex;
+    width: 80%;
+    justify-content: center;
   }
 }
