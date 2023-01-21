@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^14.0.0",
+    "@angular/animations": "^14.2.12",
     "@angular/cdk": "^14.2.7",
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
@@ -24,6 +24,7 @@
     "google-libphonenumber": "^3.2.31",
     "intl-tel-input": "^17.0.3",
     "jquery": "^3.6.1",
+    "ngx-toastr": "^16.0.2",
     "ngxs-intl-tel-input": "^4.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

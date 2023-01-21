@@ -1,6 +1,7 @@
 import { ProductsService } from './../../services/products.service';
 import { Component, OnInit} from '@angular/core';
 import { product } from '../../models/products';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-all-products',
@@ -13,7 +14,7 @@ export class AllProductsComponent implements OnInit {
   myProductStorage:any[] = [];
   loading: boolean = false;
   amount: number = 0;
-  constructor(private service: ProductsService) { }
+  constructor(private service: ProductsService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -71,7 +72,8 @@ export class AllProductsComponent implements OnInit {
       this.myProductStorage = JSON.parse(localStorage.getItem('cart')!);
       let exist = this.myProductStorage.find(item => item.item.id == event.item.id);
       if(exist){
-        alert("Item already exist in your Cart");
+        // alert("Item already exist in your Cart");
+        this.toastr.warning("Item already exist in your Cart")
       }else{
         this.myProductStorage.push(event);
         localStorage.setItem('cart', JSON.stringify(this.myProductStorage));
