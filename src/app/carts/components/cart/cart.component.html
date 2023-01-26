@@ -5,12 +5,12 @@
       <div class="col-md-6">
         <p>You Have <strong> {{myProductStorage.length}} </strong> Item In Your Cart</p>
       </div>
-      <div class="col-md-6 text-md-end">
+      <div class="col-md-6 text-md-end" *ngIf="myProductStorage.length>0">
         <span type="button" class="btn btn-outline-danger" (click)="clearCart()">Clear Shopping Cart</span>
       </div>
     </div>
   </div>
-  <div class="table-responsive">
+  <div class="table-responsive" *ngIf="myProductStorage.length>0">
     <table class="table table-striped">
       <thead>
         <tr>

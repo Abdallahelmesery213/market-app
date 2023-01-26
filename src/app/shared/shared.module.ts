@@ -25,8 +25,12 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule
-
+    ToastrModule.forRoot(
+      // {
+      // timeOut: 10000,
+      // positionClass: 'toast-top-right',
+      // }
+    ),
   ],
   exports: [
     HeaderComponent,
@@ -35,8 +39,6 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     SelectComponent,
     ProductComponent,
-    BrowserAnimationsModule,
-    ToastrModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
