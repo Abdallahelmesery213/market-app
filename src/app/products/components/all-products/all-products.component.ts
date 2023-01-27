@@ -2,6 +2,7 @@ import { ProductsService } from './../../services/products.service';
 import { Component, OnInit} from '@angular/core';
 import { product } from '../../models/products';
 import { ToastrService } from 'ngx-toastr';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-all-products',
@@ -14,12 +15,16 @@ export class AllProductsComponent implements OnInit {
   myProductStorage:any[] = [];
   loading: boolean = false;
   amount: number = 0;
-  constructor(private service: ProductsService, private toastr: ToastrService) { }
+  constructor
+  (
+    private service: ProductsService,
+    private toastr: ToastrService,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();
-    console.log(this.amount)
   }
 
   getProducts(){
@@ -72,9 +77,15 @@ export class AllProductsComponent implements OnInit {
       this.myProductStorage = JSON.parse(localStorage.getItem('cart')!);
       let exist = this.myProductStorage.find(item => item.item.id == event.item.id);
       if(exist){
-        debugger;
-        this.toastr.success("Item already exist in your Cart");
-        alert("Item already exist in your Cart");
+        // debugger;
+        // this.toastr.success("Item already exist in your Cart");
+        this.snackBar.open("Item Already Exist In Your Cart", "X", {
+          duration:5000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right',
+          panelClass: ['warn-snackbar']
+        })
+        // alert("Item already exist in your Cart");
       }else{
         this.myProductStorage.push(event);
         localStorage.setItem('cart', JSON.stringify(this.myProductStorage));

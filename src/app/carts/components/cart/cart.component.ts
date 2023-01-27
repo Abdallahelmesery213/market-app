@@ -1,5 +1,7 @@
 import { CartsService } from './../../services/carts.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-cart',
@@ -8,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private service:CartsService) { }
+  constructor(private service:CartsService, private snackBar: MatSnackBar) { }
   myProductStorage:any=[];
   total:number = 0;
-  success:boolean = false;
+  // success:boolean = false;
+
 
   ngOnInit(): void {
     this.getCartProducts()
@@ -75,9 +78,13 @@ export class CartComponent implements OnInit {
     };
     //console.log(model);
 
-    // debugger;
     this.service.createNewCart(model).subscribe((res:any)=>{
-      this.success = true;
+      this.snackBar.open("well done! Your Order Is Successfully Send", "", {
+        duration:3500,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+        panelClass: ['green-snackbar']
+      })
       console.log(res);
     }, (err:any) => {
       console.log(err);

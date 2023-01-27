@@ -9,3 +9,11 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.green-snackbar {
+  background: green;
+  color: white;
+}
+.warn-snackbar {
+  background: rgb(202, 202, 65);
+  color: #000;
+}

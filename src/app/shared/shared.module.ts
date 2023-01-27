@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './components/select/select.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -27,10 +29,12 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot(
       // {
-      // timeOut: 10000,
+      // timeOut: 3500,
       // positionClass: 'toast-top-right',
+      // closeButton: true
       // }
     ),
+    MatSnackBarModule
   ],
   exports: [
     HeaderComponent,
@@ -39,6 +43,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     SelectComponent,
     ProductComponent,
+    MatSnackBarModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
