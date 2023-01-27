@@ -11,6 +11,6 @@ export class CartsService {
   constructor(private http: HttpClient) {}
 
   createNewCart(model:any){
-    return this.http.post(environment.baseApi + 'carts', model);
+    return this.http.post("https://fakestoreapi.com/" + 'carts', model);
   }
 }
