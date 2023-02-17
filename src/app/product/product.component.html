@@ -10,8 +10,8 @@
     <button *ngIf="!btnToggle" class="btn btn-primary" (click)="btnToggle= true" >{{'carts.addCart' | translate}}</button>
     <div class="d-flex w-50" *ngIf="btnToggle">
       <input type="number" class="form-control" [(ngModel)]="amount" min="1">
-      <button class="btn btn-danger" (click)="addCard()">Add</button>
+      <button class="btn btn-danger" (click)="addCard()">{{'carts.add' | translate}}</button>
     </div>
-    <button mat-raised-button class="btn btn-secondary">{{productData.price}} LE</button>
+    <button mat-raised-button class="btn btn-secondary">{{productData.price}} {{'carts.LE' | translate}}</button>
   </mat-card-actions>
 </mat-card>

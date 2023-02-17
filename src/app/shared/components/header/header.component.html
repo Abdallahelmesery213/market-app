@@ -1,13 +1,36 @@
 <nav class="navbar">
   <div class="container">
-    <a class="navbar-brand">{{'navbar.market' | translate}}</a>
-    <ul class="d-flex list-unstyled">
-      <li><a routerLink="products">{{'navbar.products' | translate}}</a></li>
-      <li> <a routerLink="carts">{{'navbar.carts' | translate}}</a> </li>
-    </ul>
+    <!-- <a class="navbar-brand">{{'navbar.market' | translate}}</a> -->
+    <a routerLink="products">{{'navbar.products' | translate}}</a>
+    <a routerLink="carts">{{'navbar.carts' | translate}}</a>
     <select class="form-select" (change)="switchLang($event)" >
-      <option value="en" selected="translate.currentLang">English</option>
-      <option value="ar" selected="translate.currentLang">عربي</option>
+      <option value="en" selected="translate.currentLang">En</option>
+      <option value="ar" selected="translate.currentLang">Ar</option>
     </select>
   </div>
 </nav>
+
+<!-- <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand">{{'navbar.market' | translate}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="products">{{'navbar.products' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="carts">{{'navbar.carts' | translate}}</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <select class="form-select" (change)="switchLang($event)" >
+          <option value="en" selected="translate.currentLang">En</option>
+          <option value="ar" selected="translate.currentLang">Ar</option>
+        </select>
+      </form>
+    </div>
+  </div>
+</nav> -->

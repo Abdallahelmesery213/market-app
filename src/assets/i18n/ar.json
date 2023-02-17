@@ -5,7 +5,17 @@
     "carts": "السلة"
   },
   "carts":{
-    "addCart":"أضف إلى السلة"
+    "addCart":"أضف إلى السلة",
+    "shoppingCart": "عربة التسوق",
+    "name": "الأسم",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "total": "سعر الكل",
+    "clrCart": "حذف الكل",
+    "delete": "حذف",
+    "ordrNow": "احجز الان",
+    "LE": "ج",
+    "add": "أضافة"
   },
   "details":{
     "title": "العنوان",
@@ -14,5 +24,8 @@
     "rate": "التقيم",
     "price": "السعر",
     "count": "الكمية"
-  }
-}
+  },
+  "categories": {
+    "categories": "التصنيف",
+    "all": "الكل"
+  }}

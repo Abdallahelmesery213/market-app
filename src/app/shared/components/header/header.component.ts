@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Inject } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 
 
 @Component({
@@ -9,7 +11,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public translate: TranslateService) {
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    public translate: TranslateService
+    ){
     translate.addLangs(['en', 'ar']);
     translate.setDefaultLang('en');
   }
@@ -17,8 +22,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  switchLang(lang: any) {
-    this.translate.use(lang.target.value);
+  switchLang(langVal: any) {
+    let lang = langVal.target.value;
+    let htmlTag = this.document.getElementsByTagName("html")[0] as HTMLHtmlElement;
+    htmlTag.dir = lang === "ar" ? "rtl" : "ltr";
+    htmlTag.lang = lang === "ar" ? "ar" : "en";
+    htmlTag.className = lang === "ar" ? "rtlClass" : "";
+    this.translate.use(lang);
     //window.location.reload();
   }
 

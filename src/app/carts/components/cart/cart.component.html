@@ -1,12 +1,12 @@
 <div class="cartBox mt-5">
-  <h1>Shopping Cart</h1>
+  <h1>{{'carts.shoppingCart' | translate}}</h1>
   <div class="headCart">
     <div class="row">
       <div class="col-md-6">
         <p>You Have <strong> {{myProductStorage.length}} </strong> Item In Your Cart</p>
       </div>
-      <div class="col-md-6 text-md-end" *ngIf="myProductStorage.length>0">
-        <span type="button" class="btn btn-outline-danger" (click)="clearCart()">Clear Shopping Cart</span>
+      <div class="col-md-6 clearCart" *ngIf="myProductStorage.length>0">
+        <span type="button" class="btn btn-outline-danger" (click)="clearCart()">{{'carts.clrCart' | translate}}</span>
       </div>
     </div>
   </div>
@@ -15,10 +15,10 @@
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col" style="width: 25%;">Quantity</th>
-          <th scope="col">Total</th>
+          <th scope="col">{{'carts.name' | translate}}</th>
+          <th scope="col">{{'carts.price' | translate}}</th>
+          <th scope="col" style="width: 25%;">{{'carts.quantity' | translate}}</th>
+          <th scope="col">{{'carts.total' | translate}}</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -26,7 +26,7 @@
         <tr *ngFor="let item of myProductStorage; let index=index">
           <td><img src="{{item.item.image}}" alt="{{item.item.title}}"></td>
           <td>{{item.item.title}}</td>
-          <td>{{item.item.price}} L.E</td>
+          <td>{{item.item.price}} {{'carts.LE' | translate}} </td>
           <td>
             <div class="quantity">
               <button class="btn btn-dark" (click)="minsAmount(index)"> - </button>
@@ -34,8 +34,8 @@
               <button class="btn btn-dark" (click)="addAmount(index)"> + </button>
             </div>
           </td>
-          <td>{{item.item.price * item.quantity}} L.E</td>
-          <td><button class="btn btn-danger" (click)="deleteItem(index)">Delete</button></td>
+          <td>{{item.item.price * item.quantity}} {{'carts.LE' | translate}}</td>
+          <td><button class="btn btn-danger" (click)="deleteItem(index)">{{'carts.delete' | translate}}</button></td>
         </tr>
       </tbody>
       <tfoot>
@@ -44,8 +44,8 @@
           <th></th>
           <th></th>
           <th></th>
-          <th>Total: {{total | number: '.2'}} L.E</th>
-          <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
+          <th>{{'carts.total' | translate}}: {{total | number: '.2'}} {{'carts.LE' | translate}} </th>
+          <th class="text-center"><button class="btn btn-success" (click)="addCart()">{{'carts.ordrNow' | translate}}</button></th>
         </tr>
       </tfoot>
     </table>

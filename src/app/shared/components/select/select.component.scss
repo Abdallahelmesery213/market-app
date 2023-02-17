@@ -1,3 +1,11 @@
 label{
   font-size: 16px;
 }
+select{
+  width: 25%;
+}
+@media screen and (max-width: 600px) {
+  select{
+    width: 100%;
+  }
+}

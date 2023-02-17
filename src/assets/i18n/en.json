@@ -5,7 +5,18 @@
     "carts": "Carts"
   },
   "carts":{
-    "addCart":"Add To Cart"
+    "addCart":"Add To Cart",
+    "shoppingCart": "Shopping Cart",
+    "name": "Name",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "clrCart": "Clear Shopping Cart",
+    "delete": "Delete",
+    "ordrNow": "Order Now",
+    "LE": "LE",
+    "add": "Add"
+
   },
   "details":{
     "title": "Title",
@@ -14,5 +25,9 @@
     "rate": "Rate",
     "price": "Price",
     "count": "Count"
+  },
+  "categories": {
+    "categories": "Categories",
+    "all": "ALL"
   }
 }
