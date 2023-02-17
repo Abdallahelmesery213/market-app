@@ -3,16 +3,19 @@ import { RouterModule } from '@angular/router';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './components/select/select.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-
-
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -24,7 +27,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(
@@ -34,7 +36,15 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
       // closeButton: true
       // }
     ),
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   exports: [
     HeaderComponent,
@@ -43,7 +53,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     SelectComponent,
     ProductComponent,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TranslateModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

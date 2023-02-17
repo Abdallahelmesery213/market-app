@@ -1,0 +1,18 @@
+{
+  "navbar":{
+    "market":"Market",
+    "products": "Products",
+    "carts": "Carts"
+  },
+  "carts":{
+    "addCart":"Add To Cart"
+  },
+  "details":{
+    "title": "Title",
+    "category": "Category",
+    "description": "Description",
+    "rate": "Rate",
+    "price": "Price",
+    "count": "Count"
+  }
+}

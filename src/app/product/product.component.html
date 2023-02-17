@@ -7,7 +7,7 @@
     <p> {{productData.description}} </p>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="!btnToggle" class="btn btn-primary" (click)="btnToggle= true" >Add To Card</button>
+    <button *ngIf="!btnToggle" class="btn btn-primary" (click)="btnToggle= true" >{{'carts.addCart' | translate}}</button>
     <div class="d-flex w-50" *ngIf="btnToggle">
       <input type="number" class="form-control" [(ngModel)]="amount" min="1">
       <button class="btn btn-danger" (click)="addCard()">Add</button>

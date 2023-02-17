@@ -1,0 +1,18 @@
+{
+  "navbar":{
+    "market":"السوق",
+    "products": "المنتجات",
+    "carts": "السلة"
+  },
+  "carts":{
+    "addCart":"أضف إلى السلة"
+  },
+  "details":{
+    "title": "العنوان",
+    "category": "الصنف",
+    "description": "الوصف",
+    "rate": "التقيم",
+    "price": "السعر",
+    "count": "الكمية"
+  }
+}

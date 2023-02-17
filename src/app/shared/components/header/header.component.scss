@@ -11,11 +11,15 @@ nav{
     justify-content: space-between;
     align-items: center;
     top: 50%;
-    transform: translateY(15%);
+    transform: translateY(25%);
     li{
       margin-left: 35px;
       font-size: 20px;
       cursor: pointer;
     }
+  }
+  select{
+    display: inline-flex;
+    width: 150px;
   }
 }

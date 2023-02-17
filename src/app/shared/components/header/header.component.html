@@ -1,9 +1,13 @@
 <nav class="navbar">
   <div class="container">
-    <a class="navbar-brand">Market</a>
+    <a class="navbar-brand">{{'navbar.market' | translate}}</a>
     <ul class="d-flex list-unstyled">
-      <li><a routerLink="products">Products</a></li>
-      <li> <a routerLink="carts">Carts</a> </li>
+      <li><a routerLink="products">{{'navbar.products' | translate}}</a></li>
+      <li> <a routerLink="carts">{{'navbar.carts' | translate}}</a> </li>
     </ul>
+    <select class="form-select" (change)="switchLang($event)" >
+      <option value="en" selected="translate.currentLang">English</option>
+      <option value="ar" selected="translate.currentLang">عربي</option>
+    </select>
   </div>
 </nav>
