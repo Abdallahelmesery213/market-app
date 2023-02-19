@@ -1,0 +1,33 @@
+{
+  "navbar":{
+    "market":"Market",
+    "products": "Products",
+    "carts": "Carts"
+  },
+  "carts":{
+    "addCart":"Add To Cart",
+    "shoppingCart": "Shopping Cart",
+    "name": "Name",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "clrCart": "Clear Shopping Cart",
+    "delete": "Delete",
+    "ordrNow": "Order Now",
+    "LE": "LE",
+    "add": "Add"
+
+  },
+  "details":{
+    "title": "Title",
+    "category": "Category",
+    "description": "Description",
+    "rate": "Rate",
+    "price": "Price",
+    "count": "Count"
+  },
+  "categories": {
+    "categories": "Categories",
+    "all": "ALL"
+  }
+}
